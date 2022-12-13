@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './card.scss';
+import { Link } from 'react-router-dom';
 
-
-const Cards = ({results}) => {
+const Cards = ({results, page}) => {
   let display;
 
   if(results) {
     display = results.map((character) => {
       const { id, name, image, location, status } = character;
       return (
-        <div key={id} className='col-4 mb-4 position-relative'>
+        <Link to={`${page}${id}`} key={id} className='col-4 mb-4 position-relative'>
           <div className='cards'>
             <img src={image} alt={name} className='img-fluid img' />
             <div className='content p-2'>
@@ -30,7 +30,7 @@ const Cards = ({results}) => {
           <div className={`badge1 badge position-absolute ${status === 'Alive' ? 'bg-success' : status === 'Dead' ? 'bg-danger' : 'bg-secondary'}`}>
             {status}
           </div>
-        </div>
+        </Link>
       )
     })
   } else {

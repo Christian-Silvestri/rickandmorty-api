@@ -10,6 +10,7 @@ import Search from './components/Search/Search';
 import Navbar from './components/Navbar/Navbar';
 import Episodes from './Pages/Episodes';
 import Locations from './Pages/Locations';
+import CardDetails from './components/Card/CardDetails';
 
 function App() {
 
@@ -20,8 +21,11 @@ function App() {
       </div>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/:id' element={<CardDetails />} />
         <Route path='/episodes' element={<Episodes />} />
-        <Route path='locations' element={<Locations />} />
+        <Route path='/episodes/:id' element={<CardDetails />} />
+        <Route path='/locations' element={<Locations />} />
+        <Route path='/locations/:id' element={<CardDetails />} />
       </Routes>
     </Router>
   )
@@ -57,7 +61,7 @@ const Home = () => {
           <Filters setStatus={setStatus} setPageNumber={setPageNumber} setGender={setGender} setSpecies={setSpecies} />
           <div className='col-8'>
             <div className='row'>
-              <Cards results={results} />
+              <Cards page='/' results={results} />
             </div>
           </div>
         </div>
