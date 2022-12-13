@@ -12,7 +12,7 @@ const Status = ({ setStatus, setPagenumber }) => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseThree"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-controls="collapseThree"
         >
           Status

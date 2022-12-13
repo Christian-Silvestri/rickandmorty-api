@@ -9,16 +9,17 @@ const FilterBtn = ({ name, index, items, task, setPageNumber }) => {
   return (
     <div>
       <div className="form-check">
+
+        <input
+          className="form-check-input check"
+          type="radio"
+          name={name}
+          id={`${name}-${index}`}
+          onClick={handleFilter}
+        />
         <label
           className="btn btn-outline-primary "
           htmlFor={`${name}-${index}`}>
-          <input
-            className="form-check-input check"
-            type="radio"
-            name={name}
-            id={`${name}-${index}`}
-            onClick={handleFilter}
-          />
           {items}
         </label>
       </div>

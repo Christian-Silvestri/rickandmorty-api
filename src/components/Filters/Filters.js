@@ -4,12 +4,23 @@ import Species from './Category/Species'
 import Status from './Category/Status'
 
 const Filters = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
+  const clear = () => {
+    setGender('');
+    setSpecies('');
+    setStatus('');
+    setPageNumber(1);
+  }
+
   return (
     <div className='col-3'>
       <div className='text-center fw-bold fs-4 mb-2'>
         Filter
       </div>
-      <div style={{ cursor: 'pointer' }} className='text-primary text-center text-decoration-underline mb-4'>
+      <div
+        style={{ cursor: 'pointer' }}
+        className='text-primary text-center text-decoration-underline mb-4'
+        onClick={clear}
+      >
         Clear filters
       </div>
 

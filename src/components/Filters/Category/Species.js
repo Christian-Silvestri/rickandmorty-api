@@ -7,7 +7,7 @@ const Species = ({ setPageNumber, setSpecies }) => {
     'Alien',
     'Humanoid',
     'Poopybutthole',
-    'Mythologiacal',
+    'Mythological',
     'Unknown',
     'Animal',
     'Disease',
