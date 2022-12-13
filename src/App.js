@@ -4,15 +4,20 @@ import 'bootstrap/dist/js/bootstrap';
 import Cards from './components/Card/Cards';
 import Filters from './components/Filters/Filters';
 import Pagination from './components/Pagination/Pagination';
+import Search from './components/Search/Search';
 
 
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [fetchData, setFetchData] = useState([]);
+  const [search, setSearch] = useState('');
+  const [status, setStatus] = useState('');
+  const [gender, setGender] = useState('');
+  const [species, setSpecies] = useState('');
   const { info, results } = fetchData;
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     (async function () {
@@ -28,11 +33,10 @@ function App() {
       <h1 className='text-center ubuntu my-4'>
         Rick&Morty
       </h1>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className='container'>
         <div className='row'>
-          <div className='col-3'>
-            <Filters />
-          </div>
+          <Filters setStatus={setStatus} setPageNumber={setPageNumber} setGender={setGender} setSpecies={setSpecies} />
           <div className='col-8'>
             <div className='row'>
               <Cards results={results} />
@@ -40,7 +44,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Pagination setPageNumber={setPageNumber} pageNumber={pageNumber}  />
+      <Pagination setPageNumber={setPageNumber} pageNumber={pageNumber} info={info} />
     </div>
   );
 }
