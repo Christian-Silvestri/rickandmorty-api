@@ -38,13 +38,13 @@ const Locations = () => {
         </h6>
       </div>
       <div className=' row'>
-        <div className=' col-3'>
+        <div className=' col-lg-3 col-12'>
           <h4 className=' text-center'>
             Pick Location
             <InputGroup name='Location'  setID={setID} totalEpisode={126} />
           </h4>
         </div>
-        <div className=' col-8'>
+        <div className=' col-lg-8 col-12'>
           <div className=' row'>
             <Cards  page='/locations/' results={results} />
           </div>

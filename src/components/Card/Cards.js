@@ -7,17 +7,20 @@ const Cards = ({results, page}) => {
 
   if(results) {
     display = results.map((character) => {
+
       const { id, name, image, location, status } = character;
+
       return (
-        <Link to={`${page}${id}`} key={id} className='col-4 mb-4 position-relative'>
-          <div className='cards'>
+        <Link style={{textDecoration: 'none'}} to={`${page}${id}`} key={id} 
+        className='col-lg-4 col-md-6 col-12 mb-4 position-relative'>
+          <div className='cards text-dark d-flex justify-content-center flex-column'>
             <img src={image} alt={name} className='img-fluid img' />
             <div className='content p-2'>
               <div className='fs-4 fw-bold mb-4'>
                 {name}
               </div>
               <div>
-                <div className='fs-6'>
+                <div className='fs-6 '>
                   Last location
                 </div>
                 <div className='fs-5'>

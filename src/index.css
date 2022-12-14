@@ -34,3 +34,14 @@ button[aria-expanded="true"] > .open {
   font-weight: bolder !important;
   color: #0b5ed7 !important;
 }
+
+@media (max-width : 768px) {
+  .next,
+  .prev {
+    display: none;
+  }
+
+  .pagination {
+    font-size: 14px;
+  }
+}

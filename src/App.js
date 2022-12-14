@@ -53,13 +53,13 @@ const Home = () => {
 
   return (
     <div className="App">
-
+      <h1 className=' text-center'>Characters</h1>
 
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className='container'>
         <div className='row'>
           <Filters setStatus={setStatus} setPageNumber={setPageNumber} setGender={setGender} setSpecies={setSpecies} />
-          <div className='col-8'>
+          <div className='col-lg-8 col-12'>
             <div className='row'>
               <Cards page='/' results={results} />
             </div>
